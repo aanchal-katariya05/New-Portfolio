@@ -1,42 +1,41 @@
-const themeBtn =
-    document.getElementById("themeBtn");
+/* ================= THEME ================= */
 
+const themeBtn = document.getElementById("themeBtn");
 
 const savedTheme =
     localStorage.getItem("portfolioTheme");
 
-
 if (savedTheme === "light") {
 
-    document.documentElement
-        .setAttribute(
-            "data-theme",
-            "light"
-        );
+    document.documentElement.setAttribute(
+        "data-theme",
+        "light"
+    );
 
-    themeBtn.textContent = "☀";
-
+    themeBtn.innerHTML =
+        '<i class="fa-solid fa-sun"></i>';
 }
 
 
 themeBtn.addEventListener("click", () => {
 
-    const current =
+    const isLight =
         document.documentElement
-            .getAttribute("data-theme");
+            .getAttribute("data-theme") === "light";
 
 
-    if (current === "light") {
+    if (isLight) {
 
         document.documentElement
             .removeAttribute("data-theme");
-
-        themeBtn.textContent = "☾";
 
         localStorage.setItem(
             "portfolioTheme",
             "dark"
         );
+
+        themeBtn.innerHTML =
+            '<i class="fa-solid fa-moon"></i>';
 
     } else {
 
@@ -46,20 +45,20 @@ themeBtn.addEventListener("click", () => {
                 "light"
             );
 
-        themeBtn.textContent = "☀";
-
         localStorage.setItem(
             "portfolioTheme",
             "light"
         );
 
+        themeBtn.innerHTML =
+            '<i class="fa-solid fa-sun"></i>';
     }
 
 });
 
 
 
-// ================= MOBILE MENU =================
+/* ================= MOBILE MENU ================= */
 
 const menuBtn =
     document.getElementById("menuBtn");
@@ -79,54 +78,44 @@ document
     .querySelectorAll(".nav-links a")
     .forEach(link => {
 
-        link.addEventListener(
-            "click",
-            () => {
+        link.addEventListener("click", () => {
 
-                navLinks.classList.remove(
-                    "open"
-                );
+            navLinks.classList.remove("open");
 
-            }
-        );
+        });
 
     });
 
 
 
-// ================= TYPING EFFECT =================
+/* ================= TYPING EFFECT ================= */
 
 const typing =
     document.getElementById("typing");
 
 
 const words = [
-
     "clean websites.",
     "Java applications.",
     "REST APIs.",
     "useful products."
-
 ];
 
 
 let wordIndex = 0;
-
 let charIndex = 0;
-
 let deleting = false;
 
 
 function typeEffect() {
 
-    const currentWord =
-        words[wordIndex];
+    const word = words[wordIndex];
 
 
     if (!deleting) {
 
         typing.textContent =
-            currentWord.substring(
+            word.substring(
                 0,
                 charIndex + 1
             );
@@ -134,10 +123,7 @@ function typeEffect() {
         charIndex++;
 
 
-        if (
-            charIndex ===
-            currentWord.length
-        ) {
+        if (charIndex === word.length) {
 
             deleting = true;
 
@@ -147,13 +133,12 @@ function typeEffect() {
             );
 
             return;
-
         }
 
     } else {
 
         typing.textContent =
-            currentWord.substring(
+            word.substring(
                 0,
                 charIndex - 1
             );
@@ -166,22 +151,16 @@ function typeEffect() {
             deleting = false;
 
             wordIndex =
-                (wordIndex + 1)
-                % words.length;
-
+                (wordIndex + 1) %
+                words.length;
         }
-
     }
 
 
     setTimeout(
-
         typeEffect,
-
-        deleting ? 50 : 85
-
+        deleting ? 45 : 80
     );
-
 }
 
 
@@ -189,110 +168,68 @@ typeEffect();
 
 
 
-// ================= SKILLS SLIDER =================
+/* ================= SKILLS SLIDER ================= */
 
 const track =
-    document.getElementById(
-        "skillsTrack"
-    );
+    document.getElementById("skillsTrack");
 
+const cards =
+    document.querySelectorAll(".skill-card");
 
-const nextBtn =
-    document.getElementById(
-        "nextSkill"
-    );
+const nextSkill =
+    document.getElementById("nextSkill");
 
+const prevSkill =
+    document.getElementById("prevSkill");
 
-const prevBtn =
-    document.getElementById(
-        "prevSkill"
-    );
-
-
-const dotsContainer =
-    document.getElementById(
-        "skillDots"
-    );
-
-
-const skillCards =
-    document.querySelectorAll(
-        ".skill-card"
-    );
+const dots =
+    document.getElementById("skillDots");
 
 
 let currentSlide = 0;
 
 
-function getVisibleCards() {
+function visibleCards() {
 
-    if (window.innerWidth <= 450) {
-
+    if (window.innerWidth <= 450)
         return 1;
 
-    }
-
-    if (window.innerWidth <= 700) {
-
+    if (window.innerWidth <= 700)
         return 2;
 
-    }
-
-    if (window.innerWidth <= 900) {
-
+    if (window.innerWidth <= 900)
         return 3;
 
-    }
-
     return 4;
-
 }
 
 
-function getTotalSlides() {
+function totalSlides() {
 
     return Math.max(
-
         1,
-
-        skillCards.length -
-        getVisibleCards() +
-        1
-
+        cards.length - visibleCards() + 1
     );
-
 }
 
 
 function createDots() {
 
-    dotsContainer.innerHTML = "";
-
-
-    const total =
-        getTotalSlides();
-
+    dots.innerHTML = "";
 
     for (
         let i = 0;
-        i < total;
+        i < totalSlides();
         i++
     ) {
 
         const dot =
-            document.createElement(
-                "span"
-            );
-
+            document.createElement("span");
 
         if (i === currentSlide) {
 
-            dot.classList.add(
-                "active"
-            );
-
+            dot.classList.add("active");
         }
-
 
         dot.addEventListener(
             "click",
@@ -305,28 +242,17 @@ function createDots() {
             }
         );
 
-
-        dotsContainer.appendChild(
-            dot
-        );
-
+        dots.appendChild(dot);
     }
-
 }
 
 
 function updateSlider() {
 
-    const visible =
-        getVisibleCards();
-
-
     const cardWidth =
-        skillCards[0].offsetWidth;
+        cards[0].offsetWidth;
 
-
-    const gap = 12;
-
+    const gap = 10;
 
     track.style.transform =
         `translateX(-${currentSlide *
@@ -334,207 +260,141 @@ function updateSlider() {
 
 
     document
-        .querySelectorAll(
-            ".slider-dots span"
-        )
-        .forEach(
-            (dot, index) => {
+        .querySelectorAll(".slider-dots span")
+        .forEach((dot, index) => {
 
-                dot.classList.toggle(
-                    "active",
-                    index === currentSlide
-                );
+            dot.classList.toggle(
+                "active",
+                index === currentSlide
+            );
 
-            }
-        );
-
+        });
 }
 
 
-nextBtn.addEventListener(
-    "click",
-    () => {
+nextSkill.addEventListener("click", () => {
 
-        const total =
-            getTotalSlides();
+    currentSlide++;
 
+    if (
+        currentSlide >= totalSlides()
+    ) {
 
-        currentSlide++;
-
-        if (
-            currentSlide >= total
-        ) {
-
-            currentSlide = 0;
-
-        }
-
-
-        updateSlider();
-
+        currentSlide = 0;
     }
-);
+
+    updateSlider();
+});
 
 
-prevBtn.addEventListener(
-    "click",
-    () => {
+prevSkill.addEventListener("click", () => {
 
-        const total =
-            getTotalSlides();
+    currentSlide--;
 
+    if (currentSlide < 0) {
 
-        currentSlide--;
-
-        if (currentSlide < 0) {
-
-            currentSlide =
-                total - 1;
-
-        }
-
-
-        updateSlider();
-
+        currentSlide =
+            totalSlides() - 1;
     }
-);
+
+    updateSlider();
+});
 
 
 createDots();
 
 
-window.addEventListener(
-    "resize",
-    () => {
+window.addEventListener("resize", () => {
 
-        const total =
-            getTotalSlides();
+    if (
+        currentSlide >= totalSlides()
+    ) {
 
-
-        if (
-            currentSlide >= total
-        ) {
-
-            currentSlide =
-                total - 1;
-
-        }
-
-
-        createDots();
-
-        updateSlider();
-
+        currentSlide =
+            totalSlides() - 1;
     }
-);
+
+    createDots();
+
+    updateSlider();
+});
 
 
-// Automatic skills movement
+/* Automatic movement */
 
 setInterval(() => {
 
-    const total =
-        getTotalSlides();
-
-
     currentSlide++;
 
-
     if (
-        currentSlide >= total
+        currentSlide >= totalSlides()
     ) {
 
         currentSlide = 0;
-
     }
-
 
     updateSlider();
 
-}, 3000);
+}, 3500);
 
 
 
-// ================= ACTIVE NAV =================
+/* ================= ACTIVE NAV ================= */
 
 const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
+    document.querySelectorAll("section[id]");
 
 const navItems =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
+    document.querySelectorAll(".nav-links a");
 
 
-window.addEventListener(
-    "scroll",
-    () => {
+window.addEventListener("scroll", () => {
 
-        let current = "";
+    let current = "";
 
 
-        sections.forEach(
-            section => {
+    sections.forEach(section => {
 
-                const top =
-                    section.offsetTop -
-                    150;
+        const sectionTop =
+            section.offsetTop - 150;
 
 
-                if (
-                    window.scrollY >= top
-                ) {
+        if (
+            window.scrollY >= sectionTop
+        ) {
 
-                    current =
-                        section.id;
+            current = section.id;
+        }
 
-                }
-
-            }
-        );
+    });
 
 
-        navItems.forEach(
-            link => {
+    navItems.forEach(link => {
 
-                link.classList.remove(
-                    "active"
-                );
+        link.classList.remove("active");
 
 
-                if (
-                    link.getAttribute(
-                        "href"
-                    ) ===
-                    `#${current}`
-                ) {
+        if (
+            link.getAttribute("href") ===
+            `#${current}`
+        ) {
 
-                    link.classList.add(
-                        "active"
-                    );
+            link.classList.add("active");
+        }
 
-                }
+    });
 
-            }
-        );
-
-    }
-);
+});
 
 
 
-// ================= CONTACT FORM =================
+/* ================= CONTACT FORM ================= */
 
-const form =
-    document.getElementById(
-        "contactForm"
-    );
+const contactForm =
+    document.getElementById("contactForm");
 
 
-form.addEventListener(
+contactForm.addEventListener(
     "submit",
     function(event) {
 
@@ -542,51 +402,28 @@ form.addEventListener(
 
 
         const name =
-            document.getElementById(
-                "name"
-            ).value;
-
+            document.getElementById("name").value;
 
         const email =
-            document.getElementById(
-                "email"
-            ).value;
-
+            document.getElementById("email").value;
 
         const subject =
-            document.getElementById(
-                "subject"
-            ).value;
-
+            document.getElementById("subject").value;
 
         const message =
-            document.getElementById(
-                "message"
-            ).value;
+            document.getElementById("message").value;
 
 
         const body =
-
-            `Name: ${name}
-
-Email: ${email}
-
-Message:
-
-${message}`;
+            `Name: ${name}\n\n` +
+            `Email: ${email}\n\n` +
+            `Message:\n${message}`;
 
 
         const mailto =
-
             `mailto:aanchalkatariya05@gmail.com` +
-
-            `?subject=${encodeURIComponent(
-                subject
-            )}` +
-
-            `&body=${encodeURIComponent(
-                body
-            )}`;
+            `?subject=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(body)}`;
 
 
         document.getElementById(
@@ -595,64 +432,45 @@ ${message}`;
             "Opening your email app...";
 
 
-        window.location.href =
-            mailto;
+        window.location.href = mailto;
 
     }
 );
 
 
 
-// ================= YEAR =================
+/* ================= YEAR ================= */
 
-document.getElementById(
-    "year"
-).textContent =
+document.getElementById("year").textContent =
     new Date().getFullYear();
 
 
 
-// ================= TOP BUTTON =================
+/* ================= TOP BUTTON ================= */
 
 const topBtn =
-    document.getElementById(
-        "topBtn"
-    );
+    document.getElementById("topBtn");
 
 
-window.addEventListener(
-    "scroll",
-    () => {
+window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 500) {
+    if (window.scrollY > 500) {
 
-            topBtn.classList.add(
-                "show"
-            );
+        topBtn.classList.add("show");
 
-        } else {
+    } else {
 
-            topBtn.classList.remove(
-                "show"
-            );
-
-        }
-
+        topBtn.classList.remove("show");
     }
-);
+
+});
 
 
-topBtn.addEventListener(
-    "click",
-    () => {
+topBtn.addEventListener("click", () => {
 
-        window.scrollTo({
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-            top: 0,
-
-            behavior: "smooth"
-
-        });
-
-    }
-);
+});

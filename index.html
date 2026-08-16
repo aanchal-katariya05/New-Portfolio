@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Aanchal Katariya | Java Full Stack Developer</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
           rel="stylesheet">
-
 </head>
-
 
 <body>
 
 <!-- ================= NAVBAR ================= -->
 
-<header>
+<header class="header">
 
     <nav class="navbar">
 
@@ -37,44 +32,25 @@
             Aanchal<span>.</span>
         </a>
 
-
         <div class="nav-links" id="navLinks">
 
-            <a href="#home" class="active">
-                Home
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#skills">
-                Skills
-            </a>
-
-            <a href="#projects">
-                Projects
-            </a>
-
-            <a href="#education">
-                Education
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
 
         </div>
 
+        <div class="nav-actions">
 
-        <div class="nav-buttons">
-
-            <button id="themeBtn">
-                ☾
+            <button id="themeBtn" aria-label="Change theme">
+                <i class="fa-solid fa-moon"></i>
             </button>
 
-            <button id="menuBtn">
-                ☰
+            <button id="menuBtn" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
             </button>
 
         </div>
@@ -84,38 +60,24 @@
 </header>
 
 
-
 <!-- ================= HOME ================= -->
 
 <section id="home" class="hero">
 
-    <div class="hero-glow"></div>
-
-
     <div class="hero-container">
-
-
-        <!-- LEFT -->
 
         <div class="hero-content">
 
-            <p class="hero-tag">
+            <div class="developer-label">
                 <span></span>
                 JAVA FULL STACK DEVELOPER
-            </p>
-
+            </div>
 
             <h1>
-
                 Hi, I'm
-
                 <br>
-
-                <span>Aanchal</span>
-                Katariya
-
+                <span>Aanchal</span> Katariya
             </h1>
-
 
             <h2>
                 I build
@@ -123,58 +85,57 @@
                 <b>|</b>
             </h2>
 
-
             <p class="hero-description">
-
-                I'm a passionate developer who loves creating
-                clean, responsive and user-friendly web applications
-                using Java, JavaScript and modern technologies.
-
+                I build clean, responsive and user-friendly web
+                applications using Java, JavaScript and modern
+                technologies.
             </p>
-
 
             <div class="hero-buttons">
 
-                <a href="#projects"
-                   class="btn primary">
-
+                <a href="#projects" class="btn primary">
                     View My Work
-                    <span>→</span>
-
+                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
 
-
-                <a href="#contact"
-                   class="btn secondary">
-
+                <a href="#contact" class="btn secondary">
                     Contact Me
-
                 </a>
 
             </div>
 
 
-            <div class="socials">
+            <div class="social-icons">
 
                 <a href="https://github.com/aanchal-katariya05"
-                   target="_blank">
+                   target="_blank"
+                   aria-label="GitHub">
 
-                    GitHub
+                    <i class="fa-brands fa-github"></i>
 
                 </a>
-
 
                 <a href="https://www.linkedin.com/"
-                   target="_blank">
+                   target="_blank"
+                   aria-label="LinkedIn">
 
-                    LinkedIn
+                    <i class="fa-brands fa-linkedin-in"></i>
 
                 </a>
 
+                <a href="mailto:2005katariyaaanchal@gmail.com"
+                   aria-label="Email">
 
-                <a href="mailto:aanchalkatariya05@gmail.com">
+                    <i class="fa-regular fa-envelope"></i>
 
-                    Email
+                </a>
+
+               <a href="https://www.facebook.com/aanchal.katariya"
+                     target="_blank"
+                   rel="noopener noreferrer"
+                 aria-label="Facebook">
+
+                <i class="fa-brands fa-facebook-f"></i>
 
                 </a>
 
@@ -183,17 +144,11 @@
         </div>
 
 
-
-        <!-- RIGHT PHOTO -->
+        <!-- PROFILE PHOTO -->
 
         <div class="hero-photo">
 
-            <div class="orbit orbit-one"></div>
-
-            <div class="orbit orbit-two"></div>
-
-            <div class="photo-glow"></div>
-
+            <div class="photo-ring"></div>
 
             <div class="photo-circle">
 
@@ -202,19 +157,11 @@
 
             </div>
 
-
-            <div class="floating-dot dot-one"></div>
-
-            <div class="floating-dot dot-two"></div>
-
-            <div class="floating-dot dot-three"></div>
-
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- ================= ABOUT ================= -->
@@ -223,7 +170,7 @@
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-title center">
 
             <p>GET TO KNOW ME</p>
 
@@ -236,92 +183,76 @@
 
         <div class="about-grid">
 
-
-            <div class="about-text">
+            <div class="about-card">
 
                 <div class="about-icon">
-                    👩‍💻
+                    <i class="fa-solid fa-user"></i>
                 </div>
 
-
-                <h3>
-                    Who I Am
-                </h3>
-
-
                 <p>
-
                     I'm a B.Tech Electronics & Communication
                     Engineering student with a strong passion
                     for software development.
-
                 </p>
 
-
                 <p>
-
                     My primary interest is Java Full Stack
                     Development. I enjoy creating practical
                     projects, learning new technologies and
                     improving my problem-solving skills.
-
                 </p>
 
-
                 <p>
-
-                    My goal is to start my career as a Software
-                    / Full Stack Developer and continue growing
+                    My goal is to start my career as a Software /
+                    Full Stack Developer and continue growing
                     as a professional developer.
-
                 </p>
 
             </div>
 
 
-
-            <div class="about-stats">
+            <div class="stats-grid">
 
                 <div class="stat-card">
+
+                    <i class="fa-solid fa-code"></i>
 
                     <strong>15+</strong>
 
-                    <span>
-                        Projects Built
-                    </span>
+                    <span>Projects Built</span>
 
                 </div>
 
 
                 <div class="stat-card">
+
+                    <i class="fa-brands fa-java"></i>
 
                     <strong>Java</strong>
 
-                    <span>
-                        Backend Focus
-                    </span>
+                    <span>Backend Focus</span>
 
                 </div>
 
 
                 <div class="stat-card">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
 
                     <strong>2026</strong>
 
-                    <span>
-                        Internship
-                    </span>
+                    <span>Internship</span>
 
                 </div>
 
 
                 <div class="stat-card">
 
+                    <i class="fa-solid fa-rocket"></i>
+
                     <strong>2027</strong>
 
-                    <span>
-                        Graduation
-                    </span>
+                    <span>Graduation</span>
 
                 </div>
 
@@ -334,13 +265,11 @@
 </section>
 
 
-
 <!-- ================= SKILLS ================= -->
 
 <section id="skills" class="skills-section">
 
     <div class="container">
-
 
         <div class="section-title center">
 
@@ -350,44 +279,28 @@
                 Technical <span>Skills</span>
             </h2>
 
-            <small>
-                I love turning ideas into real-world solutions
-                using these technologies.
-            </small>
-
         </div>
 
 
-
-        <!-- SKILL SLIDER -->
-
         <div class="skills-slider">
 
-            <button class="slider-btn"
-                    id="prevSkill">
-
-                ←
-
+            <button class="slider-button" id="prevSkill">
+                <i class="fa-solid fa-angle-left"></i>
             </button>
 
 
             <div class="skills-window">
 
-                <div class="skills-track"
-                     id="skillsTrack">
+                <div class="skills-track" id="skillsTrack">
 
-
-                    <!-- JAVA -->
 
                     <div class="skill-card">
 
-                        <div class="skill-logo java">
-                            ☕
+                        <div class="skill-icon java">
+                            <i class="fa-brands fa-java"></i>
                         </div>
 
-                        <h3>
-                            Java
-                        </h3>
+                        <h3>Java</h3>
 
                         <p>
                             Core Java, OOPs,
@@ -397,17 +310,13 @@
                     </div>
 
 
-                    <!-- JAVASCRIPT -->
-
                     <div class="skill-card">
 
-                        <div class="skill-logo js">
-                            JS
+                        <div class="skill-icon javascript">
+                            <i class="fa-brands fa-js"></i>
                         </div>
 
-                        <h3>
-                            JavaScript
-                        </h3>
+                        <h3>JavaScript</h3>
 
                         <p>
                             ES6+, DOM, Async,
@@ -417,17 +326,13 @@
                     </div>
 
 
-                    <!-- HTML -->
-
                     <div class="skill-card">
 
-                        <div class="skill-logo html">
-                            &lt;/&gt;
+                        <div class="skill-icon html">
+                            <i class="fa-brands fa-html5"></i>
                         </div>
 
-                        <h3>
-                            HTML
-                        </h3>
+                        <h3>HTML</h3>
 
                         <p>
                             Semantic HTML5
@@ -437,17 +342,13 @@
                     </div>
 
 
-                    <!-- CSS -->
-
                     <div class="skill-card">
 
-                        <div class="skill-logo css">
-                            #
+                        <div class="skill-icon css">
+                            <i class="fa-brands fa-css3-alt"></i>
                         </div>
 
-                        <h3>
-                            CSS
-                        </h3>
+                        <h3>CSS</h3>
 
                         <p>
                             Flexbox, Grid,
@@ -457,17 +358,13 @@
                     </div>
 
 
-                    <!-- MYSQL -->
-
                     <div class="skill-card">
 
-                        <div class="skill-logo mysql">
-                            DB
+                        <div class="skill-icon mysql">
+                            <i class="fa-solid fa-database"></i>
                         </div>
 
-                        <h3>
-                            MySQL
-                        </h3>
+                        <h3>MySQL</h3>
 
                         <p>
                             SQL, Queries,
@@ -477,17 +374,13 @@
                     </div>
 
 
-                    <!-- GITHUB -->
-
                     <div class="skill-card">
 
-                        <div class="skill-logo git">
-                            ◆
+                        <div class="skill-icon git">
+                            <i class="fa-brands fa-git-alt"></i>
                         </div>
 
-                        <h3>
-                            Git & GitHub
-                        </h3>
+                        <h3>Git & GitHub</h3>
 
                         <p>
                             Version Control,
@@ -497,17 +390,13 @@
                     </div>
 
 
-                    <!-- JDBC -->
-
                     <div class="skill-card">
 
-                        <div class="skill-logo jdbc">
-                            J
+                        <div class="skill-icon jdbc">
+                            <i class="fa-solid fa-server"></i>
                         </div>
 
-                        <h3>
-                            JDBC
-                        </h3>
+                        <h3>JDBC</h3>
 
                         <p>
                             Database Connectivity
@@ -517,17 +406,13 @@
                     </div>
 
 
-                    <!-- POSTMAN -->
-
                     <div class="skill-card">
 
-                        <div class="skill-logo postman">
-                            ↗
+                        <div class="skill-icon postman">
+                            <i class="fa-solid fa-paper-plane"></i>
                         </div>
 
-                        <h3>
-                            Postman
-                        </h3>
+                        <h3>Postman</h3>
 
                         <p>
                             API Testing and
@@ -536,31 +421,23 @@
 
                     </div>
 
-
                 </div>
 
             </div>
 
 
-            <button class="slider-btn"
-                    id="nextSkill">
-
-                →
-
+            <button class="slider-button" id="nextSkill">
+                <i class="fa-solid fa-angle-right"></i>
             </button>
 
         </div>
 
 
-        <div class="slider-dots"
-             id="skillDots">
-
-        </div>
+        <div class="slider-dots" id="skillDots"></div>
 
     </div>
 
 </section>
-
 
 
 <!-- ================= PROJECTS ================= -->
@@ -568,7 +445,6 @@
 <section id="projects" class="section">
 
     <div class="container">
-
 
         <div class="section-title center">
 
@@ -589,49 +465,36 @@
             <article class="project-card">
 
                 <div class="project-icon purple">
-                    📚
+                    <i class="fa-solid fa-book-open"></i>
                 </div>
 
-
-                <div class="project-info">
+                <div class="project-content">
 
                     <h3>
                         Library Management System
                     </h3>
 
                     <p>
-
-                        Manage books, students,
-                        issue-return operations
-                        with a complete Java
+                        Manage books, students, issue-return
+                        operations with a complete Java
                         based application.
-
                     </p>
 
-
                     <div class="tags">
-
                         <span>Java</span>
                         <span>JDBC</span>
                         <span>MySQL</span>
-
                     </div>
-
 
                     <div class="project-links">
 
                         <a href="https://github.com/aanchal-katariya05"
                            target="_blank">
-
                             GitHub ↗
-
                         </a>
 
-
-                        <a href="#contact">
-
+                        <a href="#">
                             Live Demo ↗
-
                         </a>
 
                     </div>
@@ -639,7 +502,6 @@
                 </div>
 
             </article>
-
 
 
             <!-- BANKING -->
@@ -647,48 +509,35 @@
             <article class="project-card">
 
                 <div class="project-icon green">
-                    🏦
+                    <i class="fa-solid fa-building-columns"></i>
                 </div>
 
-
-                <div class="project-info">
+                <div class="project-content">
 
                     <h3>
                         Banking Dashboard
                     </h3>
 
                     <p>
-
-                        Secure dashboard to manage
-                        customers, accounts,
-                        transactions and reports.
-
+                        A secure dashboard to manage customers,
+                        accounts, transactions and reports.
                     </p>
 
-
                     <div class="tags">
-
                         <span>Java</span>
                         <span>MySQL</span>
                         <span>Swing</span>
-
                     </div>
-
 
                     <div class="project-links">
 
                         <a href="https://github.com/aanchal-katariya05"
                            target="_blank">
-
                             GitHub ↗
-
                         </a>
 
-
-                        <a href="#contact">
-
+                        <a href="#">
                             Live Demo ↗
-
                         </a>
 
                     </div>
@@ -696,7 +545,6 @@
                 </div>
 
             </article>
-
 
 
             <!-- RECIPE -->
@@ -704,49 +552,37 @@
             <article class="project-card">
 
                 <div class="project-icon orange">
-                    🍲
+                    <i class="fa-solid fa-bowl-food"></i>
                 </div>
 
-
-                <div class="project-info">
+                <div class="project-content">
 
                     <h3>
                         Meal Recipe Search
                     </h3>
 
                     <p>
-
-                        Search meals and get recipes
-                        using an external API with
-                        a responsive UI.
-
+                        Search meals and get recipes using
+                        an external API with beautiful
+                        UI and details.
                     </p>
 
-
                     <div class="tags">
-
                         <span>JavaScript</span>
                         <span>API</span>
                         <span>HTML</span>
                         <span>CSS</span>
-
                     </div>
-
 
                     <div class="project-links">
 
                         <a href="https://github.com/aanchal-katariya05"
                            target="_blank">
-
                             GitHub ↗
-
                         </a>
 
-
-                        <a href="#contact">
-
+                        <a href="#">
                             Live Demo ↗
-
                         </a>
 
                     </div>
@@ -756,55 +592,42 @@
             </article>
 
 
-
-            <!-- GITHUB FINDER -->
+            <!-- GITHUB -->
 
             <article class="project-card">
 
                 <div class="project-icon purple">
-                    🐙
+                    <i class="fa-brands fa-github"></i>
                 </div>
 
-
-                <div class="project-info">
+                <div class="project-content">
 
                     <h3>
                         GitHub Profile Finder
                     </h3>
 
                     <p>
-
-                        Search any GitHub user and
-                        view their profile, repositories
-                        and stats in real time.
-
+                        Search any GitHub user and get their
+                        profile info, repositories and
+                        stats in real time.
                     </p>
 
-
                     <div class="tags">
-
                         <span>JavaScript</span>
                         <span>API</span>
                         <span>HTML</span>
                         <span>CSS</span>
-
                     </div>
-
 
                     <div class="project-links">
 
                         <a href="https://github.com/aanchal-katariya05"
                            target="_blank">
-
                             GitHub ↗
-
                         </a>
 
-
-                        <a href="#contact">
-
+                        <a href="#">
                             Live Demo ↗
-
                         </a>
 
                     </div>
@@ -812,7 +635,6 @@
                 </div>
 
             </article>
-
 
 
             <!-- JOB PORTAL -->
@@ -820,49 +642,37 @@
             <article class="project-card">
 
                 <div class="project-icon yellow">
-                    💼
+                    <i class="fa-solid fa-briefcase"></i>
                 </div>
 
-
-                <div class="project-info">
+                <div class="project-content">
 
                     <h3>
                         Job Portal
                     </h3>
 
                     <p>
-
-                        A platform where users can
-                        search jobs and explore
-                        available career opportunities.
-
+                        A platform where users can find jobs
+                        and recruiters can post job
+                        opportunities.
                     </p>
 
-
                     <div class="tags">
-
                         <span>Java</span>
                         <span>Servlet</span>
                         <span>MySQL</span>
                         <span>HTML</span>
-
                     </div>
-
 
                     <div class="project-links">
 
                         <a href="https://github.com/aanchal-katariya05"
                            target="_blank">
-
                             GitHub ↗
-
                         </a>
 
-
-                        <a href="#contact">
-
+                        <a href="#">
                             Live Demo ↗
-
                         </a>
 
                     </div>
@@ -872,55 +682,41 @@
             </article>
 
 
-
             <!-- MOVIE -->
 
             <article class="project-card">
 
                 <div class="project-icon pink">
-                    🎬
+                    <i class="fa-solid fa-clapperboard"></i>
                 </div>
 
-
-                <div class="project-info">
+                <div class="project-content">
 
                     <h3>
                         Movie Search
                     </h3>
 
                     <p>
-
-                        Search movies, get details,
-                        ratings and posters using
-                        a movie database API.
-
+                        Search movies, get details, ratings
+                        and posters using a Movie Database API.
                     </p>
 
-
                     <div class="tags">
-
                         <span>JavaScript</span>
                         <span>API</span>
                         <span>HTML</span>
                         <span>CSS</span>
-
                     </div>
-
 
                     <div class="project-links">
 
                         <a href="https://github.com/aanchal-katariya05"
                            target="_blank">
-
                             GitHub ↗
-
                         </a>
 
-
-                        <a href="#contact">
-
+                        <a href="#">
                             Live Demo ↗
-
                         </a>
 
                     </div>
@@ -936,14 +732,11 @@
 </section>
 
 
-
 <!-- ================= EDUCATION ================= -->
 
-<section id="education"
-         class="education-section">
+<section id="education" class="education-section">
 
     <div class="container">
-
 
         <div class="section-title center">
 
@@ -963,16 +756,20 @@
 
             <div class="education-item">
 
-                <div class="education-dot"></div>
+                <div class="education-left">
 
-                <div class="education-year">
-                    2023 - 2027
+                    <div class="education-dot"></div>
+
+                    <span class="education-left-year">
+                        2023-2027
+                    </span>
+
                 </div>
 
 
                 <div class="education-card">
 
-                    <div>
+                    <div class="education-content">
 
                         <h3>
                             B.Tech - Electronics &
@@ -980,12 +777,13 @@
                         </h3>
 
                         <h4>
-                            RGPV Affiliated College
+                            Swami Vivekanand College
+                            of Engineering
                         </h4>
 
                         <p>
-                            Currently pursuing B.Tech
-                            in Electronics & Communication
+                            Currently pursuing B.Tech in
+                            Electronics & Communication
                             Engineering.
                         </p>
 
@@ -995,9 +793,8 @@
 
                     </div>
 
-
-                    <div class="education-icon">
-                        🎓
+                    <div class="education-card-year">
+                        2023-2027
                     </div>
 
                 </div>
@@ -1005,21 +802,24 @@
             </div>
 
 
-
             <!-- SCHOOL -->
 
             <div class="education-item">
 
-                <div class="education-dot"></div>
+                <div class="education-left">
 
-                <div class="education-year">
-                    2021 - 2023
+                    <div class="education-dot"></div>
+
+                    <span class="education-left-year">
+                        2022-2023
+                    </span>
+
                 </div>
 
 
                 <div class="education-card">
 
-                    <div>
+                    <div class="education-content">
 
                         <h3>
                             Higher Secondary (PCM)
@@ -1031,7 +831,8 @@
 
                         <p>
                             Completed Class 12th with
-                            Physics, Chemistry and Mathematics.
+                            Physics, Chemistry and
+                            Mathematics.
                         </p>
 
                         <strong>
@@ -1040,9 +841,8 @@
 
                     </div>
 
-
-                    <div class="education-icon">
-                        🎓
+                    <div class="education-card-year">
+                        2022-2023
                     </div>
 
                 </div>
@@ -1056,14 +856,11 @@
 </section>
 
 
-
 <!-- ================= CONTACT ================= -->
 
-<section id="contact"
-         class="contact-section">
+<section id="contact" class="contact-section">
 
-    <div class="contact-container">
-
+    <div class="container">
 
         <div class="section-title center">
 
@@ -1072,69 +869,71 @@
             </h2>
 
             <p>
-                I'm open to internships, opportunities
-                and interesting projects.
+                Have an opportunity or want to work together?
+                Let's talk.
             </p>
 
         </div>
 
 
-        <div class="contact-grid">
+        <div class="contact-wrapper">
 
 
-            <div class="contact-details">
+            <!-- CONTACT INFO -->
 
-                <div class="contact-detail">
+            <div class="contact-info">
 
-                    <span>✉</span>
+                <div class="contact-info-item">
 
-                    <p>
-                        aanchalkatariya05@gmail.com
-                    </p>
+                    <div class="contact-info-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
 
-                </div>
-
-
-                <div class="contact-detail">
-
-                    <span>📍</span>
-
-                    <p>
-                        India
-                    </p>
+                    <div>
+                        <small>Email</small>
+                        <p>
+                            aanchalkatariya05@gmail.com
+                        </p>
+                    </div>
 
                 </div>
 
 
-                <div class="contact-socials">
+                <div class="contact-info-item">
 
-                    <a href="https://github.com/aanchal-katariya05"
-                       target="_blank">
+                    <div class="contact-info-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
 
-                        GitHub
+                    <div>
+                        <small>Location</small>
+                        <p>
+                            Indore, Madhya Pradesh, India
+                        </p>
+                    </div>
 
-                    </a>
-
-
-                    <a href="https://www.linkedin.com/"
-                       target="_blank">
-
-                        LinkedIn
-
-                    </a>
+                </div>
 
 
-                    <a href="mailto:aanchalkatariya05@gmail.com">
+                <div class="contact-info-item">
 
-                        Email
+                    <div class="contact-info-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
 
-                    </a>
+                    <div>
+                        <small>Phone</small>
+                        <p>
+                            +91 8435687300
+                        </p>
+                    </div>
 
                 </div>
 
             </div>
 
 
+            <!-- CONTACT FORM -->
 
             <form id="contactForm">
 
@@ -1146,7 +945,6 @@
                         placeholder="Your Name"
                         required
                     >
-
 
                     <input
                         type="email"
@@ -1174,10 +972,10 @@
                 ></textarea>
 
 
-                <button type="submit"
-                        class="btn primary">
+                <button type="submit" class="btn primary">
 
-                    Send Message →
+                    Send Message
+                    <i class="fa-solid fa-arrow-right"></i>
 
                 </button>
 
@@ -1186,12 +984,44 @@
 
             </form>
 
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="contact-socials">
+
+                <a href="https://github.com/aanchal-katariya05"
+                   target="_blank">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+                <a href="mailto:aanchalkatariya05@gmail.com">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                </a>
+
+                <a href="https://www.facebook.com/aanchal.katariya">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+            </div>
+
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- ================= FOOTER ================= -->
@@ -1212,12 +1042,11 @@
 
 
 <button id="topBtn">
-    ↑
+    <i class="fa-solid fa-arrow-up"></i>
 </button>
 
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
